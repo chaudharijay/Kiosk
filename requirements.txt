@@ -1,0 +1,92 @@
+# Conference Registration App - Windows Setup Guide
+
+## Requirements.txt
+```
+# Core Required Packages
+streamlit>=1.28.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Audio Recording Functionality
+audio-recorder-streamlit>=0.0.8
+
+# Speech Recognition Options
+SpeechRecognition>=3.10.0
+openai-whisper>=20231117
+
+# Audio Processing Support
+pydub>=0.25.0
+```
+
+## Step-by-Step Installation & Running Instructions
+
+### Step 1: Install Required Packages
+Open Command Prompt (cmd) or PowerShell as Administrator and run:
+
+```bash
+pip install streamlit>=1.28.0 pandas>=2.0.0 openpyxl>=3.1.0 audio-recorder-streamlit>=0.0.8 SpeechRecognition>=3.10.0 openai-whisper>=20231117 pydub>=0.25.0
+```
+
+**Alternative (using requirements.txt):**
+1. Save the requirements.txt content above to a file
+2. Run: `pip install -r requirements.txt`
+
+### Step 2: Verify Installation
+Check if packages are installed correctly:
+```bash
+pip list | findstr streamlit
+pip list | findstr pandas
+pip list | findstr audio-recorder-streamlit
+```
+
+### Step 3: Run the app
+Navigate to the folder containing your app file and run:
+
+```bash
+streamlit run "app.py"
+```
+
+**If the app file is in a specific folder:**
+```bash
+cd "C:\path\to\your\app\folder"
+streamlit run "Kiosk App.py"
+```
+
+### Step 4: Access the App
+- The app will automatically open in your default web browser
+- If it doesn't open automatically, go to: `http://localhost:8501`
+- Grant microphone permissions when prompted by the browser
+
+## Troubleshooting for Windows
+
+### If you get "pip not found" error:
+```bash
+python -m pip install streamlit>=1.28.0 pandas>=2.0.0 openpyxl>=3.1.0 audio-recorder-streamlit>=0.0.8 SpeechRecognition>=3.10.0 openai-whisper>=20231117 pydub>=0.25.0
+```
+
+### If you get "streamlit not found" error:
+```bash
+python -m streamlit run "Kiosk App.py"
+```
+
+### If audio doesn't work:
+1. Check browser microphone permissions
+2. Try different browser (Chrome recommended)
+3. Restart the app: Press `Ctrl+C` in command prompt, then run again
+
+### First Run Notes:
+- **Whisper Model Download**: First time running will download ~140MB AI model (one-time only)
+- **Internet Required**: For Google Speech Recognition feature
+- **Excel Files**: Will be saved to Documents/Desktop/Downloads folders automatically
+
+## Quick Start Commands Summary:
+```bash
+# Install everything
+pip install streamlit>=1.28.0 pandas>=2.0.0 openpyxl>=3.1.0 audio-recorder-streamlit>=0.0.8 SpeechRecognition>=3.10.0 openai-whisper>=20231117 pydub>=0.25.0
+
+# Run the app
+streamlit run "Kiosk App.py"
+
+# Stop the app
+Press Ctrl+C in the command prompt
+```
