@@ -29,11 +29,12 @@ try:
 except ImportError:
     PYDUB_ENABLED = False
 
-# Page configuration
+# Page configuration with minimal interface
 st.set_page_config(
     page_title="Registration System",
     page_icon="🎤",
-    layout="centered"
+    layout="centered",
+    initial_sidebar_state="collapsed"
 )
 
 # Professional CSS with clean white theme
